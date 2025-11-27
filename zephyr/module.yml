@@ -1,3 +1,4 @@
+name: zmk-keyboard-nice-totem
 build:
   settings:
     board_root: .
