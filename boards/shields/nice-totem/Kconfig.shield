@@ -1,5 +1,11 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
 config SHIELD_NICETOTEM_LEFT
     def_bool $(shields_list_contains,nicetotem_left)
 
 config SHIELD_NICETOTEM_RIGHT
     def_bool $(shields_list_contains,nicetotem_right)
+
+config SHIELD_NICETOTEM_DONGLE
+    def_bool $(shields_list_contains,nicetotem_dongle)

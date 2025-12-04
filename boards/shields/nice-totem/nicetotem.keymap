@@ -1,0 +1,25 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+&lt { quick_tap_ms = <220>; };
+&mt { quick_tap_ms = <220>; };
+
+/ {
+
+    keymap {
+        compatible = "zmk,keymap";
+
+    Base {
+        label = "Base";
+        bindings = <
+                    &kp Q       &kp W       &kp E         &kp R         &kp T                         &kp Y        &kp U            &kp I       &kp O       &kp P               
+        &kp LCTRL   &kp A       &kp S       &kp D         &kp F         &kp G                         &kp H        &kp J            &kp K       &kp L       &kp SEMICOLON  &kp SQT
+        &kp LSHIFT  &kp Z       &kp X       &kp C         &kp V         &kp B                         &kp N        &kp M            &kp COMMA   &kp DOT     &kp SLASH      &kp RSHIFT
+                                            &kp ESCAPE    &kp TAB       &kp ENTER                     &kp SPACE    &kp BACKSPACE    &kp DELETE
+        >;
+    };
+  };
+};

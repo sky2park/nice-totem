@@ -1,0 +1,12 @@
+file_format: "1"
+id: nice_totem
+name: Nice! Totem
+type: shield
+url: https://github.com/sky2park/nice-totem
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - nicetotem_left
+  - nicetotem_right
+  - nicetotem_dongle
