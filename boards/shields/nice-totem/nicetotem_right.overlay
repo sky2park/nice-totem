@@ -6,6 +6,10 @@
 
 #include "nicetotem.dtsi"
 
+&default_transform {
+    col-offset = <4>
+}
+
 &kscan0 {
     row-gpios
 		= <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
