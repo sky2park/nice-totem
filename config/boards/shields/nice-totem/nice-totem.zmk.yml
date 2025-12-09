@@ -7,6 +7,6 @@ requires: [pro_micro]
 features:
   - keys
 siblings:
-  - nicetotem_left
-  - nicetotem_right
-  - nicetotem_dongle
+  - nice-totem_left
+  - nice-totem_right
+  - nice-totem_dongle

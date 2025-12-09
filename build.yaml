@@ -9,11 +9,11 @@
 # shield: [ "corne_left", "corne_right" ]
 include:
   - board: nice_nano_v2
-    shield: nicetotem_left
+    shield: nice-totem_left
   - board: nice_nano_v2
-    shield: nicetotem_right
+    shield: nice-totem_right
   - board: seeeduino_xiao_ble
-    shield: nicetotem_dongle dongle_screen
+    shield: nice-totem_dongle dongle_screen
   - board: nice_nano_v2
     shield: settings_reset
   - board: seeeduino_xiao_ble

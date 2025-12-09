@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "nicetotem.dtsi"
+#include "nice-totem.dtsi"
 
 &default_transform {
     col-offset = <4>;
