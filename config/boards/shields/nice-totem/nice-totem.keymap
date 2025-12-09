@@ -7,7 +7,7 @@
 #define Navi 1
 #define Syms 2
 #define Func 3
-#define Adju 4
+#define NPad 4
 #define Game 5
 #define GamP 6
 
@@ -21,7 +21,7 @@
         
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <0 26>;
             bindings = <&kp ESC>;
         };
 
@@ -61,20 +61,6 @@
             bindings = <&kp RCTRL>;
         };
 
-        combo_alt_f4 {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            layers = <1>;
-            bindings = <&kp LA(F4)>;
-        };
-
-        combo_ctrl_f4 {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            layers = <1>;
-            bindings = <&kp LC(F4)>;
-        };
-
         combo_toggle_game_layer {
             timeout-ms = <50>;
             key-positions = <0 4>;
@@ -97,10 +83,10 @@
             display-name = "Base";
             label = "Base";
             bindings = <
-                        &kp Q       &kp W       &kp E          &kp R      &kp T                         &kp Y        &kp U       &kp I       &kp O       &kp P               
-            &kp LCTRL   &kp A       &kp S       &kp D          &kp F      &kp G                         &kp H        &kp J       &kp K       &kp L       &kp SEMI    &lt 4 SQT
-            &kp LSHIFT  &kp Z       &kp X       &kp C          &kp V      &kp B                         &kp N        &kp M       &kp COMMA   &kp DOT     &kp SLASH   &kp RSHIFT
-                                                &mt LALT DEL   &lt 3 TAB  &lt 1 ENTER                   &lt 2 SPACE  &kp BSPC    &mt LGUI MINUS
+                            &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
+            &kp LCTRL       &kp A           &kp S           &kp D           &kp F           &kp G                           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &lt 3 SQT
+            &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
+                                                            &kp LALT        &lt 4 TAB       &lt 1 ENTER                     &lt 2 SPACE     &kp BSPC        &kp RGUI
             >;
         };
 
@@ -108,10 +94,10 @@
             display-name = "Navi";
             label = "Navi";
             bindings = <
-                        &kp PG_UP   &kp HOME    &kp UP     &kp END    &kp LPAR                      &kp RPAR     &kp N7      &kp N8      &kp N9     &kp ASTRK              
-            &trans      &kp PG_DN   &kp LEFT    &kp DOWN   &kp RIGHT  &kp LBRC                      &kp RBRC     &kp N4      &kp N5      &kp N6     &kp SLASH   &kp PLUS
-            &trans      &kp F5      &kp F11     &kp F12    &kp INS    &kp LBKT                      &kp RBKT     &kp N1      &kp N2      &kp N3     &kp EQUAL   &kp MINUS
-                                                &trans     &trans     &trans                        &trans       &kp DOT     &kp N0
+                            &kp LC(F4)      &kp LA(F4)      &kp UP          &kp END         &kp F12                         &kp PG_UP       &kp HOME        &kp UP          &kp END         &trans                  
+            &trans          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &kp F11                         &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
+            &trans          &kp LC(Z)       &kp LC(X)       &kp LC(C)       &kp LC(V)       &kp F5                          &kp INS         &trans          &trans          &trans          &trans          &trans
+                                                            &trans          &trans          &trans                          &trans          &kp DEL         &trans
             >;
         };
 
@@ -119,32 +105,33 @@
             display-name = "Syms";
             label = "Syms";
             bindings = <
-                        &kp EXCL    &kp AT      &kp HASH      &kp DLLR      &kp PRCNT               &kp CARET    &kp AMPS    &kp ASTRK   &kp GRAVE   &kp TILDE  
-            &trans      &trans      &trans      &trans        &trans        &trans                  &trans       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT     &trans
-            &trans      &trans      &trans      &trans        &trans        &trans                  &kp UNDER    &kp EQUAL   &kp PLUS    &trans      &trans        &trans
-                                                &trans        &trans        &trans                  &trans       &trans      &trans
+                            &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                      &kp CARET       &kp AMPS        &kp ASTRK       &kp MINUS        &kp EQUAL  
+            &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &trans
+            &trans          &kp GRAVE       &kp TILDE       &kp LBKT        &kp LBRC        &kp LPAR                       &kp RPAR        &kp RBRC        &kp RBKT        &kp PIPE         &kp BSLH        &trans
+                                                            &trans          &trans          &trans                         &trans          &trans          &trans
             >;
         };
-
+        
         Func {
             display-name = "Func";
             label = "Func";
             bindings = <
-                    &trans  &trans  &trans  &trans  &trans          &trans  &kp F9  &kp F10 &kp F11 &kp F2  
-            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &kp F5  &kp F6  &kp F7  &kp F8  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans          &trans  &kp F1  &kp F2  &kp F3  &kp F4  &trans
-                                    &trans  &trans  &trans          &trans  &trans  &trans
+                            &out OUT_USB    &out OUT_BLE    &trans          &trans          &kp C_VOL_UP                    &trans          &kp F9          &kp F10         &kp F11         &kp F12  
+            &kp CAPS        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &trans          &kp C_VOL_DN                    &trans          &kp F5          &kp F6          &kp F7          &kp F8          &trans
+            &trans          &bt BT_CLR      &trans          &trans          &trans          &kp C_MUTE                      &trans          &kp F1          &kp F2          &kp F3          &kp F4          &trans
+                                                            &trans          &trans          &trans                          &trans          &trans          &trans
+                                                                                                                                                                                                    
             >;
         };
 
-        Adju {
-            display-name = "Adju";
-            label = "Adju";
+        NPad {
+            display-name = "NPad";
+            label = "NPad";
             bindings = <
-                        &out OUT_USB  &trans        &trans        &trans        &trans          &trans  &kp C_VOL_UP  &trans  &trans  &trans  
-            &kp CAPS    &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans          &trans  &kp C_VOL_DN  &trans  &trans  &trans  &trans
-            &trans      &bt BT_CLR    &trans        &trans        &trans        &trans          &trans  &kp C_MUTE    &trans  &trans  &trans  &trans
-                                                    &trans        &trans        &trans          &trans  &trans        &trans
+                            &trans          &trans          &trans          &trans          &trans                          &kp PLUS        &kp N7          &kp N8          &kp N9          &kp ASTRK              
+            &trans          &trans          &trans          &trans          &trans          &trans                          &kp MINUS       &kp N4          &kp N5          &kp N6          &kp SLASH       &trans
+            &trans          &trans          &trans          &trans          &trans          &trans                          &kp UNDER       &kp N1          &kp N2          &kp N3          &kp EQUAL       &trans
+                                                            &trans          &trans          &trans                          &trans          &kp N0          &kp DOT
             >;
         };
 
@@ -152,21 +139,22 @@
             display-name = "Game";
             label = "Game";
             bindings = <
-                        &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  
-            &trans      &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-            &trans      &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-                                                &kp LALT   &lt 3 TAB  &lt 6 SPACE    &trans  &trans  &trans
+                            &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
+            &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
+                                                            &kp LALT        &kp TAB         &lt 6 SPACE                     &trans          &trans          &trans
             >;
         };
 
         GamP {
             display-name = "GamP";
             label = "GamP";
-            bindings = <    
-                       &kp TAB &kp N1  &kp N2  &kp N3    &kp N4          &trans  &trans    &kp UP    &kp LPAR   &kp RPAR  
-            &sk LCTRL  &trans  &kp N5  &kp N6  &kp N7    &kp N8          &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans
-            &sk LSHIFT &trans  &kp N9  &kp N0  &kp MINUS &kp EQUAL       &trans  &trans    &trans    &trans     &trans    &trans
-                                       &trans  &trans    &trans          &trans  &trans    &trans
+            bindings = <   
+                                                                                                                                                                                                                                                       o 
+                            &kp TAB         &kp N1          &kp N2          &kp N3          &kp N4                          &trans          &trans          &kp UP          &kp LPAR        &kp RPAR
+            &sk LCTRL       &trans          &kp N5          &kp N6          &kp N7          &kp N8                          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
+            &sk LSHIFT      &trans          &kp N9          &kp N0          &kp MINUS       &kp EQUAL                       &trans          &trans          &trans          &trans          &trans          &trans
+                                                            &trans          &trans          &trans                          &trans          &trans          &trans
             >;
         };
     };
