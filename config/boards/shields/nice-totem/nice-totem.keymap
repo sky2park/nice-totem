@@ -19,16 +19,10 @@
     combos {
         compatible = "zmk,combos";
         
-        combo_esc {
+        combo_esc {()
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
-        };
-
-        combo_space {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&kp SPACE>;
         };
 
         combo_del {
@@ -43,17 +37,28 @@
             bindings = <&kp LGUI>;
         };
 
+         combo_space {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp SPACE>;
+        };
+
         combo_right_b {
             timeout-ms = <50>;
             key-positions = <28 29>;
             bindings = <&kp B>;
         };
 
-        combo_toggle_game_layer {
+        combo_hanyeong {
             timeout-ms = <50>;
-            key-positions = <0 4>;
-            layers = <1>;
-            bindings = <&tog 5>;
+            key-positions = <30 31>;
+            bindings = <&kp RALT>;
+        };
+
+        combo_hanja {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp RCTRL>;
         };
 
         combo_alt_f4 {
@@ -70,21 +75,16 @@
             bindings = <&kp LC(F4)>;
         };
 
-        combo_hanyeong {
+        combo_toggle_game_layer {
             timeout-ms = <50>;
-            key-positions = <30 31>;
-            bindings = <&kp RALT>;
-        };
-
-        combo_hanja {
-            timeout-ms = <50>;
-            key-positions = <31 32>;
-            bindings = <&kp RCTRL>;
+            key-positions = <0 4>;
+            layers = <1 6>;
+            bindings = <&tog 5>;
         };
 
         combo_enter_gameonly {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <19 20>;
             layers = <5>;
             bindings = <&kp ENTER>;
         };
@@ -155,7 +155,7 @@
                         &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  
             &trans      &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
             &trans      &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-                                                &kp LALT   &lt 3 TAB  &lt 1 SPACE    &trans  &trans  &trans
+                                                &kp LALT   &lt 3 TAB  &lt 6 SPACE    &trans  &trans  &trans
             >;
         };
 
@@ -163,10 +163,10 @@
             display-name = "GamP";
             label = "GamP";
             bindings = <    
-                       &kp TAB &kp N1  &kp N2  &kp N3  &kp N4          &trans  &trans    &kp UP    &trans     &trans  
-            &sk LCTRL  &trans  &trans  &trans  &trans  &trans          &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-            &sk LSHIFT &trans  &trans  &trans  &kp N5  &kp N6          &trans  &trans    &trans    &trans     &trans  &trans
-                                       &trans  &trans  &trans          &trans  &trans    &trans
+                       &kp TAB &kp N1  &kp N2  &kp N3    &kp N4          &trans  &trans    &kp UP    &kp LPAR   &kp RPAR  
+            &sk LCTRL  &trans  &kp N5  &kp N6  &kp N7    &kp N8          &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans
+            &sk LSHIFT &trans  &kp N9  &kp N0  &kp MINUS &kp EQUAL       &trans  &trans    &trans    &trans     &trans    &trans
+                                       &trans  &trans    &trans          &trans  &trans    &trans
             >;
         };
     };
