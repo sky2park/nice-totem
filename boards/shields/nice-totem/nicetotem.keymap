@@ -49,15 +49,38 @@
             bindings = <&kp B>;
         };
 
+        combo_toggle_game_layer {
+            timeout-ms = <50>;
+            key-positions = <0 4>;
+            layers = <1>;
+            bindings = <&tog 5>;
+        }
+
+        combo_alt_f4 {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            layers = <1>;
+            bindings = <&kp LA(F4)>;
+        }
+
+        combo_ctrl_f4 {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <1>;
+            bindings = <&kp LC(F4)>;
+        }
+
         combo_hanyeong {
             timeout-ms = <50>;
             key-positions = <30 31>;
+            layers = <2>;
             bindings = <&kp RALT>;
         };
 
         combo_hanja {
             timeout-ms = <50>;
             key-positions = <31 32>;
+            layers = <2>;
             bindings = <&kp RCTRL>;
         };
 
@@ -88,8 +111,8 @@
             label = "Navi";
             bindings = <
                         &kp PG_UP   &kp HOME    &kp UP     &kp END    &kp LPAR                      &kp RPAR     &kp N7      &kp N8      &kp N9     &kp ASTRK              
-            &kp F11     &kp PG_DN   &kp LEFT    &kp DOWN   &kp RIGHT  &kp LBRC                      &kp RBRC     &kp N4      &kp N5      &kp N6     &kp SLASH   &kp PLUS
-            &kp F12     &kp F5      &kp INS     &trans     &trans     &kp LBKT                      &kp RBKT     &kp N1      &kp N2      &kp N3     &kp EQUAL   &kp MINUS
+            &trans      &kp PG_DN   &kp LEFT    &kp DOWN   &kp RIGHT  &kp LBRC                      &kp RBRC     &kp N4      &kp N5      &kp N6     &kp SLASH   &kp PLUS
+            &trans      &kp F5      &kp F11     &kp F12    &kp INS    &kp LBKT                      &kp RBKT     &kp N1      &kp N2      &kp N3     &kp EQUAL   &kp MINUS
                                                 &trans     &trans     &trans                        &trans       &kp DOT     &kp N0
             >;
         };
@@ -120,7 +143,7 @@
             display-name = "Adju";
             label = "Adju";
             bindings = <
-                        &out OUT_USB  &trans        &trans        &trans        &trans          &tog 5  &trans  &trans  &trans  &trans  
+                        &out OUT_USB  &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  
             &kp CAPS    &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans          &trans  &trans  &trans  &trans  &trans  &trans
             &trans      &bt BT_CLR    &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                                     &trans        &trans        &trans          &trans  &trans  &trans
@@ -132,9 +155,9 @@
             label = "Game";
             bindings = <
                         &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  
-            &trans      &trans      &trans      &trans     &trans     &sl 6          &trans  &trans  &trans  &trans  &trans  &trans
             &trans      &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
-                                                &kp LALT   &lt 3 ESC  &lt 1 SPACE    &trans  &trans  &trans
+            &trans      &trans      &trans      &trans     &trans     &trans         &trans  &trans  &trans  &trans  &trans  &trans
+                                                &kp LALT   &lt 3 TAB  &lt 1 SPACE    &trans  &trans  &trans
             >;
         };
 
@@ -143,7 +166,7 @@
             label = "GamP";
             bindings = <    
                        &kp TAB &kp N1  &kp N2  &kp N3  &kp N4          &trans  &trans    &kp UP    &trans     &trans  
-            &sk LCTRL  &trans  &trans  &trans  &trans  &kp G           &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+            &sk LCTRL  &trans  &trans  &trans  &trans  &trans          &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
             &sk LSHIFT &trans  &trans  &trans  &kp N5  &kp N6          &trans  &trans    &trans    &trans     &trans  &trans
                                        &trans  &trans  &trans          &trans  &trans    &trans
             >;
