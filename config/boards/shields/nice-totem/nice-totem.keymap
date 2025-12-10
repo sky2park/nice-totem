@@ -40,9 +40,9 @@
             bindings 
                 = <&macro_press>
                 , <&kp LALT>
-                , <&macro_tab>
+                , <&macro_tap>
                 , <&kp TAB>
-                , <&macro_tab>
+                , <&macro_tap>
                 , <&sk LALT>
                 , <&macro_release>
                 , <&kp_LALT>;
@@ -56,9 +56,9 @@
             bindings 
                 = <&macro_press>
                 , <&kp LALT>
-                , <&macro_tab>
+                , <&macro_tap>
                 , <&kp LS(TAB)>
-                , <&macro_tab>
+                , <&macro_tap>
                 , <&sk LALT>
                 , <&macro_release>
                 , <&kp_LALT>;
