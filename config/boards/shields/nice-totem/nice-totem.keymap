@@ -43,7 +43,7 @@
                 , <&macro_tab>
                 , <&kp TAB>
                 , <&macro_tab>
-                , <&kp LALT>
+                , <&sk LALT>
                 , <&macro_release>
                 , <&kp_LALT>;
         };
@@ -59,7 +59,7 @@
                 , <&macro_tab>
                 , <&kp LS(TAB)>
                 , <&macro_tab>
-                , <&kp LALT>
+                , <&sk LALT>
                 , <&macro_release>
                 , <&kp_LALT>;
         };
