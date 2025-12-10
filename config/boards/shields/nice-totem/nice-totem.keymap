@@ -16,6 +16,42 @@
 
 / {
 
+    behaviors {
+        nokey: nokey {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <>;
+        };
+
+        tab_when_alt: tab_when_alt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&nokey>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
+        };
+
+        shift_tab_when_alt: shift_tab_when_alt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&nokey>, <&kp LS(TAB)>;
+            mods = <(MOD_LALT)>;
+        };
+
+        td_lpar_lbrk: td_lpar_lbrk {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LPAR>, <&kp LBRK>;
+        };
+
+        td_rpar_rbrk: td_rpar_rbrk {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RPAR>, <&kp RBRK>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         
@@ -25,16 +61,46 @@
             bindings = <&kp ESC>;
         };
 
+        combo_lbrc {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp LBRC>;
+        };
+
+        combo_rbrc {
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            bindings = <&kp RBRC>;
+        };
+
+        combo_lpar_lbrk {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&td_lpar_lbrk>;
+        };
+
+        combo_rpar_rbrk {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&td_rpar_rbrk>;
+        };
+
         combo_del {
             timeout-ms = <50>;
             key-positions = <8 9>;
             bindings = <&kp DEL>;
         };
-        
-        combo_lgui {
+
+        combo_alt_shift_tab {
             timeout-ms = <50>;
-            key-positions = <24 25>;
-            bindings = <&kp LGUI>;
+            key-positions = <12 13>;
+            bindings = <&shift_tab_when_alt>;
+        };
+
+        combo_alt_tab {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&tab_when_alt>;
         };
 
          combo_space {
@@ -107,7 +173,7 @@
             bindings = <
                             &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                      &kp CARET       &kp AMPS        &kp ASTRK       &kp MINUS        &kp EQUAL  
             &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &trans
-            &trans          &kp GRAVE       &kp TILDE       &kp LBKT        &kp LBRC        &kp LPAR                       &kp RPAR        &kp RBRC        &kp RBKT        &kp PIPE         &kp BSLH        &trans
+            &trans          &kp GRAVE       &kp TILDE       &kp LBKT        &trans          &kp LPAR                       &kp RPAR        &trans          &kp RBKT        &kp PIPE         &kp BSLH        &trans
                                                             &trans          &trans          &trans                         &trans          &trans          &trans
             >;
         };
