@@ -11,26 +11,11 @@
 #define Game 5
 #define GamP 6
 
-&lt { quick_tap_ms = <220>; };
-&mt { quick_tap_ms = <220>; };
+&lt { quick_tap_ms = <180>; };
 
 / {
 
     behaviors {
-        tab_when_alt: tab_when_alt {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&none>, <&kp TAB>;
-            mods = <(MOD_LALT)>;
-        };
-
-        shift_tab_when_alt: shift_tab_when_alt {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&none>, <&kp LS(TAB)>;
-            mods = <(MOD_LALT)>;
-        };
-
         td_lpar_lbkt: td_lpar_lbkt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -43,6 +28,42 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp RPAR>, <&kp RBKT>;
+        };
+    };
+
+    macros {
+        alt_tab: alt_tab {
+          label = alt_tab;
+          compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <40>;
+            wait-ms = <100>;
+            bindings 
+                = <&macro_press>
+                , <&kp LALT>
+                , <&macro_tab>
+                , <&kp TAB>
+                , <&macro_tab>
+                , <&kp LALT>
+                , <&macro_release>
+                , <&kp_LALT>;
+        };
+
+        alt_shift_tab: alt_shift_tab {
+          label = alt_shift_tab;
+          compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <40>;
+            wait-ms = <100>;
+            bindings 
+                = <&macro_press>
+                , <&kp LALT>
+                , <&macro_tab>
+                , <&kp LS(TAB)>
+                , <&macro_tab>
+                , <&kp LALT>
+                , <&macro_release>
+                , <&kp_LALT>;
         };
     };
 
@@ -88,13 +109,15 @@
         combo_alt_shift_tab {
             timeout-ms = <50>;
             key-positions = <12 13>;
-            bindings = <&shift_tab_when_alt>;
+            layers = <1>;
+            bindings = <&alt_shift_tab>;
         };
 
         combo_alt_tab {
             timeout-ms = <50>;
             key-positions = <13 14>;
-            bindings = <&tab_when_alt>;
+            layers = <1>;
+            bindings = <&alt_tab>;
         };
 
          combo_space {
@@ -146,7 +169,7 @@
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
             &kp LCTRL       &kp A           &kp S           &kp D           &kp F           &kp G                           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &lt 3 SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp LALT        &lt 1 TAB       &kp ENTER                       &kp SPACE       &lt 2 BSPC      &kp RGUI
+                                                            &kp LALT        &kp TAB         &lt 1 ENTER                     &lt 2 SPACE     &kp BSPC        &kp RGUI
             >;
         };
 
