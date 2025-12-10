@@ -29,50 +29,21 @@
             tapping-term-ms = <200>;
             bindings = <&kp RPAR>, <&kp RBKT>;
         };
-    };
 
-    macros {
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <40>;
-            wait-ms = <100>;
-            bindings 
-                = <&macro_press>
-                , <&kp LALT>
-                , <&macro_tap>
-                , <&kp TAB>
-                , <&macro_tap>
-                , <&sk LALT>
-                , <&macro_release>
-                , <&kp LALT>;
-        };
-
-        alt_shift_tab: alt_shift_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <40>;
-            wait-ms = <100>;
-            bindings 
-                = <&macro_press>
-                , <&kp LALT>
-                , <&macro_tap>
-                , <&kp LS(TAB)>
-                , <&macro_tap>
-                , <&sk LALT>
-                , <&macro_release>
-                , <&kp LALT>;
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
         };
     };
 
     combos {
         compatible = "zmk,combos";
-        
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 27>;
-            bindings = <&kp ESC>;
-        };
 
         combo_lbrc {
             timeout-ms = <50>;
@@ -98,27 +69,7 @@
             bindings = <&td_rpar_rbkt>;
         };
 
-        combo_del {
-            timeout-ms = <50>;
-            key-positions = <8 9>;
-            bindings = <&kp DEL>;
-        };
-
-        combo_alt_shift_tab {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            layers = <1>;
-            bindings = <&alt_shift_tab>;
-        };
-
-        combo_alt_tab {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            layers = <1>;
-            bindings = <&alt_tab>;
-        };
-
-         combo_space {
+        combo_space {
             timeout-ms = <50>;
             key-positions = <26 27>;
             bindings = <&kp SPACE>;
@@ -165,9 +116,9 @@
             label = "Base";
             bindings = <
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
-            &kp LCTRL       &kp A           &kp S           &kp D           &kp F           &kp G                           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &lt 3 SQT
+            &lt 4 GRAVE     &hm LGUI A      &hm LALT S      &hm LCTRL D     &kp F           &kp G                           &kp H           &kp J           &hm LCTRL K     &hm LALT L      &hm RGUI SEMI   &lt 3 SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp LALT        &kp TAB         &lt 1 ENTER                     &lt 2 SPACE     &kp BSPC        &kp RGUI
+                                                            &kp ESC         &kp TAB         &lt 1 ENTER                     &lt 2 SPACE     &kp BSPC        &kp DEL
             >;
         };
 
@@ -181,14 +132,14 @@
                                                             &trans          &trans          &trans                          &trans          &kp DEL         &trans
             >;
         };
-
+        
         Syms {
             display-name = "Syms";
             label = "Syms";
             bindings = <
                             &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                      &kp CARET       &kp AMPS        &kp ASTRK       &kp MINUS        &kp EQUAL  
             &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &trans
-            &trans          &kp GRAVE       &kp TILDE       &trans          &trans          &trans                         &trans          &trans          &trans          &kp PIPE         &kp BSLH        &trans
+            &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &trans          &trans          &kp PIPE         &kp BSLH        &trans
                                                             &trans          &trans          &trans                         &trans          &trans          &trans
             >;
         };
@@ -210,8 +161,8 @@
             label = "NPad";
             bindings = <
                             &kp TAB         &trans          &kp UP          &kp LPAR        &kp RPAR                       &kp KP_DIVIDE   &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MINUS              
-            &kp KP_NLCK     &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans                         &kp KP_ASTERISK &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &kp BSPC
-            &trans          &tog 4          &trans          &trans          &trans          &trans                         &trans          &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp EQUAL       &trans
+            &tog 4          &kp KP_NLCK     &kp LEFT        &kp DOWN        &kp RIGHT       &trans                         &kp KP_ASTERISK &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &kp BSPC
+            &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp EQUAL       &trans
                                                             &trans          &trans          &trans                         &trans          &kp KP_N0       &kp KP_DOT
             >;
         };
