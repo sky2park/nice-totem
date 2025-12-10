@@ -17,23 +17,17 @@
 / {
 
     behaviors {
-        nokey: nokey {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-        };
-
         tab_when_alt: tab_when_alt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&nokey>, <&kp TAB>;
+            bindings = <&none>, <&kp TAB>;
             mods = <(MOD_LALT)>;
         };
 
         shift_tab_when_alt: shift_tab_when_alt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&nokey>, <&kp LS(TAB)>;
+            bindings = <&none>, <&kp LS(TAB)>;
             mods = <(MOD_LALT)>;
         };
 
