@@ -21,7 +21,7 @@
         
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 26>;
+            key-positions = <0 27>;
             bindings = <&kp ESC>;
         };
 
@@ -86,7 +86,7 @@
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
             &kp LCTRL       &kp A           &kp S           &kp D           &kp F           &kp G                           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &lt 3 SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp LALT        &lt 4 TAB       &lt 1 ENTER                     &lt 2 SPACE     &kp BSPC        &kp RGUI
+                                                            &kp LALT        &lt 1 TAB       &kp ENTER                       &kp SPACE       &lt 2 BSPC      &kp RGUI
             >;
         };
 
@@ -96,7 +96,7 @@
             bindings = <
                             &kp LC(F4)      &kp LA(F4)      &kp UP          &kp LG(R)       &kp F12                         &kp PG_UP       &kp HOME        &kp UP          &kp END         &trans                  
             &trans          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &kp F11                         &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
-            &trans          &kp LC(Z)       &kp LC(X)       &kp LC(C)       &kp LC(V)       &kp F5                          &kp INS         &trans          &trans          &trans          &trans          &trans
+            &trans          &tog 4          &kp LC(X)       &kp LC(C)       &kp LC(V)       &kp F5                          &kp INS         &trans          &trans          &trans          &trans          &trans
                                                             &trans          &trans          &trans                          &trans          &kp DEL         &trans
             >;
         };
@@ -116,10 +116,10 @@
             display-name = "Func";
             label = "Func";
             bindings = <
-                            &out OUT_USB    &out OUT_BLE    &trans          &trans          &kp C_VOL_UP                    &trans          &kp F9          &kp F10         &kp F11         &kp F12  
-            &kp CAPS        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &trans          &kp C_VOL_DN                    &kp LG(L)       &kp F5          &kp F6          &kp F7          &kp F8          &trans
-            &trans          &bt BT_CLR      &trans          &trans          &trans          &kp C_MUTE                      &trans          &kp F1          &kp F2          &kp F3          &kp F4          &trans
-                                                            &trans          &trans          &trans                          &trans          &trans          &trans
+                            &out OUT_USB    &out OUT_BLE    &trans          &trans          &kp C_VOL_UP                   &trans          &kp F9          &kp F10         &kp F11         &kp F12  
+            &kp CAPS        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &trans          &kp C_VOL_DN                   &kp LG(L)       &kp F5          &kp F6          &kp F7          &kp F8          &trans
+            &trans          &bt BT_CLR      &trans          &trans          &trans          &kp C_MUTE                     &trans          &kp F1          &kp F2          &kp F3          &kp F4          &trans
+                                                            &trans          &trans          &trans                         &trans          &trans          &trans
                                                                                                                                                                                                     
             >;
         };
@@ -128,10 +128,10 @@
             display-name = "NPad";
             label = "NPad";
             bindings = <
-                            &trans          &trans          &trans          &trans          &trans                          &kp PLUS        &kp N7          &kp N8          &kp N9          &kp ASTRK              
-            &trans          &trans          &trans          &trans          &trans          &trans                          &kp MINUS       &kp N4          &kp N5          &kp N6          &kp SLASH       &kp BSPC
-            &trans          &trans          &trans          &trans          &trans          &trans                          &kp UNDER       &kp N1          &kp N2          &kp N3          &kp EQUAL       &trans
-                                                            &trans          &trans          &trans                          &trans          &kp N0          &kp DOT
+                            &kp TAB         &trans          &kp UP          &kp LPAR        &kp RPAR                       &kp KP_DIVIDE   &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MINUS              
+            &kp NLCK        &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans                         &kp KP_ASTERISK &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &kp BSPC
+            &trans          &tog 4          &trans          &trans          &trans          &trans                         &trans          &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp EQUAL       &trans
+                                                            &trans          &trans          &trans                         &trans          &kp KP_N0       &kp KP_DOT
             >;
         };
 
