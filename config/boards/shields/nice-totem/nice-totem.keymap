@@ -45,7 +45,7 @@
                 , <&macro_tap>
                 , <&sk LALT>
                 , <&macro_release>
-                , <&kp_LALT>;
+                , <&kp LALT>;
         };
 
         alt_shift_tab: alt_shift_tab {
@@ -61,7 +61,7 @@
                 , <&macro_tap>
                 , <&sk LALT>
                 , <&macro_release>
-                , <&kp_LALT>;
+                , <&kp LALT>;
         };
     };
 
