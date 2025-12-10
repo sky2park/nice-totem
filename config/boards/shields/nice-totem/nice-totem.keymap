@@ -37,18 +37,18 @@
             mods = <(MOD_LALT)>;
         };
 
-        td_lpar_lbrk: td_lpar_lbrk {
+        td_lpar_lbkt: td_lpar_lbkt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LPAR>, <&kp LBRK>;
+            bindings = <&kp LPAR>, <&kp LBKT>;
         };
 
-        td_rpar_rbrk: td_rpar_rbrk {
+        td_rpar_rbkt: td_rpar_rbkt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp RPAR>, <&kp RBRK>;
+            bindings = <&kp RPAR>, <&kp RBKT>;
         };
     };
 
@@ -73,16 +73,16 @@
             bindings = <&kp RBRC>;
         };
 
-        combo_lpar_lbrk {
+        combo_lpar_lbkt {
             timeout-ms = <50>;
             key-positions = <14 15>;
-            bindings = <&td_lpar_lbrk>;
+            bindings = <&td_lpar_lbkt>;
         };
 
-        combo_rpar_rbrk {
+        combo_rpar_rbkt {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&td_rpar_rbrk>;
+            bindings = <&td_rpar_rbkt>;
         };
 
         combo_del {
@@ -173,7 +173,7 @@
             bindings = <
                             &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                      &kp CARET       &kp AMPS        &kp ASTRK       &kp MINUS        &kp EQUAL  
             &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &trans
-            &trans          &kp GRAVE       &kp TILDE       &kp LBKT        &trans          &kp LPAR                       &kp RPAR        &trans          &kp RBKT        &kp PIPE         &kp BSLH        &trans
+            &trans          &kp GRAVE       &kp TILDE       &trans          &trans          &trans                         &trans          &trans          &trans          &kp PIPE         &kp BSLH        &trans
                                                             &trans          &trans          &trans                         &trans          &trans          &trans
             >;
         };
