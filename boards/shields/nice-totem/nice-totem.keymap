@@ -95,7 +95,7 @@
 
         combo_toggle_game_layer {
             timeout-ms = <50>;
-            key-positions = <10 16>;
+            key-positions = <10 15>;
             layers = <1 6>;
             bindings = <&tog 5>;
         };
@@ -180,7 +180,7 @@
                             &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
             &kp LCTRL       &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
             &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
-                                                            &kp LALT        &kp TAB         &lt 6 SPACE                     &trans          &trans          &trans
+                                                            &kp LALT        &trans          &lt 6 SPACE                     &trans          &trans          &trans
             >;
         };
 
