@@ -5,6 +5,7 @@
  */
 
 #include "nice-totem.dtsi"
+#include "nice-totem-layouts.dtsi"
 
 &kscan0 {
     row-gpios
