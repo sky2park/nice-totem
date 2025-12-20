@@ -93,11 +93,18 @@
             bindings = <&kp RCTRL>;
         };
 
-        combo_toggle_game_layer {
+        combo_to_game_layer {
             timeout-ms = <50>;
             key-positions = <10 15>;
-            layers = <1 6>;
-            bindings = <&tog 5>;
+            layers = <1>;
+            bindings = <&to 5>;
+        };
+
+        combo_to_base_layer {
+            timeout-ms = <50>;
+            key-positions = <10 15>;
+            layers = <6>;
+            bindings = <&to 0>;
         };
 
         combo_enter_gameonly {
@@ -145,8 +152,8 @@
             label = "Syms";
             bindings = <
                             &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                      &kp CARET       &kp AMPS        &kp ASTRK       &kp MINUS        &kp EQUAL  
-            &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &trans
-            &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &trans          &trans          &kp PIPE         &kp BSLH        &trans
+            &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &kp BSLH
+            &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &trans
                                                             &trans          &trans          &trans                         &trans          &trans          &trans
             >;
         };
@@ -166,9 +173,9 @@
             display-name = "Func";
             label = "Func";
             bindings = <
-                            &out OUT_USB    &out OUT_BLE    &trans          &kp C_VOL_UP    &trans                         &trans          &kp F9          &kp F10         &kp F11         &kp F12  
-            &kp CAPS        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &kp C_VOL_DN    &trans                         &trans          &kp F5          &kp F6          &kp F7          &kp F8          &trans
-            &trans          &bt BT_CLR      &trans          &trans          &kp C_MUTE      &trans                         &trans          &kp F1          &kp F2          &kp F3          &kp F4          &trans
+                            &out OUT_USB    &out OUT_BLE    &trans          &kp C_VOL_UP    &trans                         &trans          &kp F7          &kp F8          &kp F9          &kp F12  
+            &kp CAPS        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &kp C_VOL_DN    &trans                         &trans          &kp F4          &kp F5          &kp F6          &kp F11         &trans
+            &trans          &bt BT_CLR      &trans          &trans          &kp C_MUTE      &trans                         &trans          &kp F1          &kp F2          &kp F3          &kp F10         &trans
                                                             &trans          &trans          &trans                         &trans          &trans          &trans                                                                                                                                        
             >;
         };
@@ -180,7 +187,7 @@
                             &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
             &kp LCTRL       &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
             &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
-                                                            &kp LALT        &trans          &lt 6 SPACE                     &trans          &trans          &trans
+                                                            &kp LALT        &kp TAB         &lt 6 SPACE                     &kp SPACE       &kp BSPC        &trans
             >;
         };
 
@@ -188,9 +195,9 @@
             display-name = "GamP";
             label = "GamP";
             bindings = <   
-                            &kp GRAVE       &kp N1          &kp N2          &kp N3          &kp N4                          &trans          &trans          &kp UP          &kp LPAR        &kp RPAR
+                            &kp GRAVE       &kp N1          &kp N2          &kp N3          &kp N4                          &trans          &trans          &kp UP          &kp MINUS       &kp EQUAL
             &sk LCTRL       &trans          &kp N5          &kp N6          &kp N7          &kp N8                          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
-            &sk LSHIFT      &trans          &kp N9          &kp N0          &kp MINUS       &kp EQUAL                       &trans          &trans          &trans          &trans          &trans          &trans
+            &sk LSHIFT      &trans          &kp N9          &kp N0          &kp MINUS       &kp EQUAL                       &trans          &trans          &trans          &kp LPAR        &kp RPAR        &trans
                                                             &trans          &trans          &trans                          &trans          &trans          &trans
             >;
         };
