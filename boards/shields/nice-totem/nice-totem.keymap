@@ -11,7 +11,10 @@
 #define Game 5
 #define GamP 6
 
-&lt { quick_tap_ms = <180>; };
+&lt { 
+    quick_tap_ms = <125>; 
+    retro-tap;
+};
 
 / {
 
