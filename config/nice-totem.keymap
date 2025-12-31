@@ -11,11 +11,6 @@
 #define Game 5
 #define GamP 6
 
-&lt { 
-    quick_tap_ms = <125>; 
-    retro-tap;
-};
-
 / {
 
     behaviors {
@@ -42,6 +37,17 @@
             quick-tap-ms = <125>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
+        };
+
+        tm: thumb_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_MODS";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Thumb-mods";
         };
     };
 
@@ -135,7 +141,7 @@
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
             &kp GRAVE       &hm LGUI A      &hm LALT S      &hm LCTRL D     &kp F           &kp G                           &kp H           &kp J           &hm LCTRL K     &hm LALT L      &hm RGUI SEMI   &kp SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp ESC         &lt 3 TAB       &lt 1 ENTER                     &lt 2 SPACE     &lt 4 BSPC      &kp DEL
+                                                            &kp ESC         &tm 3 TAB       &tm 1 ENTER                     &tm 2 SPACE     &tm 4 BSPC      &kp DEL
             >;
         };
 
@@ -190,7 +196,7 @@
                             &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
             &kp LCTRL       &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
             &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
-                                                            &kp LALT        &kp TAB         &lt 6 SPACE                     &kp SPACE       &kp BSPC        &trans
+                                                            &kp LALT        &kp TAB         &tm 6 SPACE                     &kp SPACE       &kp BSPC        &trans
             >;
         };
 
