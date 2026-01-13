@@ -6,10 +6,9 @@
 #define Base 0
 #define Navi 1
 #define Syms 2
-#define NPad 3
-#define Func 4
-#define Game 5
-#define GamP 6
+#define Func 3
+#define Game 4
+#define GamP 5
 
 / {
 
@@ -38,14 +37,14 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-
+        
         tm: thumb_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "THUMB_MODS";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
+            quick-tap-ms = <180>;
             bindings = <&mo>, <&kp>;
             display-name = "Thumb-mods";
         };
@@ -106,27 +105,27 @@
             timeout-ms = <50>;
             key-positions = <10 15>;
             layers = <1>;
-            bindings = <&to 5>;
+            bindings = <&to 4>;
         };
 
         combo_to_base_layer {
             timeout-ms = <50>;
             key-positions = <10 15>;
-            layers = <6>;
+            layers = <5>;
             bindings = <&to 0>;
         };
 
         combo_enter_gameonly {
             timeout-ms = <50>;
             key-positions = <19 20>;
-            layers = <5>;
+            layers = <4>;
             bindings = <&kp ENTER>;
         };
 
         combo_esc_gameonly {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            layers = <6>;
+            layers = <5>;
             bindings = <&kp ESC>;
         };
     };
@@ -141,7 +140,7 @@
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
             &kp GRAVE       &hm LGUI A      &hm LALT S      &hm LCTRL D     &kp F           &kp G                           &kp H           &kp J           &hm LCTRL K     &hm LALT L      &hm RGUI SEMI   &kp SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp ESC         &tm 3 TAB       &tm 1 ENTER                     &tm 2 SPACE     &tm 4 BSPC      &kp DEL
+                                                            &kp ESC         &tm 3 TAB       &tm 1 ENTER                     &tm 2 SPACE     &tm 3 BSPC      &kp DEL
             >;
         };
 
@@ -164,17 +163,6 @@
             &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &kp BSLH
             &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &trans
                                                             &trans          &trans          &trans                         &trans          &trans          &trans
-            >;
-        };
-
-        NPad {
-            display-name = "NPad";
-            label = "NPad";
-            bindings = <
-                            &kp TAB         &trans          &kp UP          &kp LPAR        &kp RPAR                       &kp KP_DIVIDE   &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MINUS              
-            &trans          &kp KP_NLCK     &kp LEFT        &kp DOWN        &kp RIGHT       &trans                         &kp KP_ASTERISK &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_PLUS     &kp BSPC
-            &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp EQUAL       &trans
-                                                            &trans          &trans          &trans                         &trans          &kp KP_N0       &kp KP_DOT
             >;
         };
 
