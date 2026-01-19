@@ -30,6 +30,12 @@
     combos {
         compatible = "zmk,combos";
 
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+
         combo_lpar {
             timeout-ms = <50>;
             key-positions = <14 15>;
@@ -45,7 +51,15 @@
         combo_space {
             timeout-ms = <50>;
             key-positions = <26 27>;
+            layers = <0>;
             bindings = <&kp SPACE>;
+        };
+
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            layers = <1>;
+            bindings = <&kp ENTER>;
         };
 
         combo_right_b {
@@ -72,33 +86,12 @@
             layers = <1>;
             bindings = <&to 4>;
         };
-
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            layers = <1>;
-            bindings = <&kp ENTER>;
-        };
-
+w
         combo_to_base_layer {
             timeout-ms = <50>;
             key-positions = <10 15>;
             layers = <5>;
             bindings = <&to 0>;
-        };
-
-        combo_enter_gameonly {
-            timeout-ms = <50>;
-            key-positions = <19 20>;
-            layers = <4>;
-            bindings = <&kp ENTER>;
-        };
-
-        combo_esc_gameonly {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            layers = <5>;
-            bindings = <&kp ESC>;
         };
     };
 
@@ -122,7 +115,7 @@
             bindings = <
                             &kp LC(F4)      &kp HOME        &kp UP          &kp END         &kp PG_UP                       &trans          &kp F7          &kp F8          &kp F9          &kp F12    
             &trans          &kp LA(F4)      &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN                       &trans          &kp F4          &kp F5          &kp F6          &kp F11         &trans
-            &trans          &kp ESC         &kp F12         &kp F11         &kp F5          &kp INS                         &kp BSPC        &kp F1          &kp F2          &kp F3          &kp F10         &trans
+            &trans          &kp trans       &kp F12         &kp F11         &kp F5          &kp INS                         &kp BSPC        &kp F1          &kp F2          &kp F3          &kp F10         &trans
                                                             &trans          &trans          &trans                          &kp ENTER       &trans          &trans                                                
             >;
         };
@@ -167,7 +160,7 @@
                             &kp GRAVE       &kp N1          &kp N2          &kp N3          &kp N4                          &trans          &trans          &kp UP          &kp MINUS       &kp EQUAL
             &sk LCTRL       &trans          &kp N5          &kp N6          &kp N7          &kp N8                          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
             &sk LSHIFT      &trans          &kp N9          &kp N0          &kp MINUS       &kp EQUAL                       &trans          &trans          &trans          &kp LPAR        &kp RPAR        &trans
-                                                            &trans          &trans          &trans                          &trans          &trans          &trans
+                                                            &trans          &trans          &trans                          &kp ENTER       &trans          &trans
             >;
         };
     };
