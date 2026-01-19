@@ -60,10 +60,10 @@
             bindings = <&kp B>;
         };
 
-        combo_bspc {
+        combo_enter {
             timeout-ms = <50>;
             key-positions = <29 30>;
-            bindings = <&kp BSPC>;
+            bindings = <&kp ENTER>;
         };
 
         combo_hanyeong {
@@ -117,7 +117,7 @@
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
             &kp GRAVE       &hm LGUI A      &hm LALT S      &hm LCTRL D     &kp F           &kp G                           &kp H           &kp J           &hm LCTRL K     &hm LALT L      &hm RGUI SEMI   &kp SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp TAB         &mo 1           &kp ENTER                       &kp SPACE       &mo 2           &kp DEL
+                                                            &kp TAB         &mo 1           &kp BSPC                        &kp SPACE       &mo 2           &kp DEL
             >;
         };
 
