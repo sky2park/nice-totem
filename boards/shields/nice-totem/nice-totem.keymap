@@ -86,12 +86,18 @@
             layers = <1>;
             bindings = <&to 4>;
         };
-w
+
         combo_to_base_layer {
             timeout-ms = <50>;
             key-positions = <10 15>;
             layers = <5>;
             bindings = <&to 0>;
+        };
+
+        combo_mod_adjust {
+            timeout-ms = <50>;
+            key-positions = <35 38>;
+            bindings = <&mo 3>;
         };
     };
 
@@ -105,7 +111,7 @@ w
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
             &kp GRAVE       &hm LGUI A      &hm LALT S      &hm LCTRL D     &kp F           &kp G                           &kp H           &kp J           &hm LCTRL K     &hm LALT L      &hm RGUI SEMI   &kp SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp TAB         &mo 3           &mo 1                           &kp SPACE       &mo 2           &kp DEL
+                                                            &kp TAB         &mo 2           &mo 1                           &kp SPACE       &kp BSPC        &kp DEL
             >;
         };
 
@@ -115,7 +121,7 @@ w
             bindings = <
                             &kp LC(F4)      &kp HOME        &kp UP          &kp END         &kp PG_UP                       &trans          &kp F7          &kp F8          &kp F9          &kp F12    
             &trans          &kp LA(F4)      &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN                       &trans          &kp F4          &kp F5          &kp F6          &kp F11         &trans
-            &trans          &kp trans       &kp F12         &kp F11         &kp F5          &kp INS                         &kp BSPC        &kp F1          &kp F2          &kp F3          &kp F10         &trans
+            &trans          &kp trans       &kp F12         &kp F11         &kp F5          &kp INS                         &trans          &kp F1          &kp F2          &kp F3          &kp F10         &trans
                                                             &trans          &trans          &trans                          &kp ENTER       &trans          &trans                                                
             >;
         };
