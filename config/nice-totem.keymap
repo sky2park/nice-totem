@@ -4,28 +4,15 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define Base 0
-#define Navi 1
-#define Syms 2
-#define Func 3
+#define NavFnc 1
+#define NumSym 2
+#define Adjust 3
 #define Game 4
 #define GamP 5
 
 / {
 
     behaviors {
-        td_lpar_lbkt: td_lpar_lbkt {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LPAR>, <&kp LBKT>;
-        };
-
-        td_rpar_rbkt: td_rpar_rbkt {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RPAR>, <&kp RBKT>;
-        };
 
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -38,43 +25,21 @@
             bindings = <&kp>, <&kp>;
         };
         
-        tm: thumb_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_MODS";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <180>;
-            bindings = <&mo>, <&kp>;
-            display-name = "Thumb-mods";
-        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        combo_lbrc {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp LBRC>;
-        };
-
-        combo_rbrc {
-            timeout-ms = <50>;
-            key-positions = <5 6>;
-            bindings = <&kp RBRC>;
-        };
-
         combo_lpar_lbkt {
             timeout-ms = <50>;
             key-positions = <14 15>;
-            bindings = <&td_lpar_lbkt>;
+            bindings = <&kp LPAR>;
         };
 
         combo_rpar_rbkt {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&td_rpar_rbkt>;
+            bindings = <&kp RPAR>;
         };
 
         combo_space {
@@ -87,6 +52,12 @@
             timeout-ms = <50>;
             key-positions = <28 29>;
             bindings = <&kp B>;
+        };
+
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <29 30>;
+            bindings = <&kp BSPC>;
         };
 
         combo_hanyeong {
@@ -140,39 +111,39 @@
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
             &kp GRAVE       &hm LGUI A      &hm LALT S      &hm LCTRL D     &kp F           &kp G                           &kp H           &kp J           &hm LCTRL K     &hm LALT L      &hm RGUI SEMI   &kp SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp ESC         &tm 3 TAB       &tm 1 ENTER                     &tm 2 SPACE     &tm 3 BSPC      &kp DEL
+                                                            &kp TAB         &mo 1           &kp ENTER                       &kp SPACE       &mo 2           &kp DEL
             >;
         };
 
-        Navi {
-            display-name = "Navi";
-            label = "Navi";
+        NavFnc {
+            display-name = "Nav/Fnc";
+            label = "NavFnc";
             bindings = <
-                            &kp LC(F4)      &kp LA(F4)      &kp UP          &kp LG(R)       &kp F12                         &kp PG_UP       &kp HOME        &kp UP          &kp END         &trans                  
-            &trans          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &kp F11                         &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
-            &trans          &trans          &kp LC(X)       &kp LC(C)       &kp LC(V)       &kp F5                          &kp INS         &trans          &trans          &trans          &trans          &trans
-                                                            &trans          &trans          &trans                          &trans          &trans          &trans
+                            &kp LC(F4)      &kp HOME        &kp UP          &kp END         &kp PG_UP                       &trans          &kp F7          &kp F8          &kp F9          &kp F12    
+            &trans          &kp LA(F4)      &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN                       &trans          &kp F4          &kp F5          &kp F6          &kp F11         &trans
+            &trans          &trans          &kp F12         &kp F11         &kp F5          &kp INS                         &trans          &kp F1          &kp F2          &kp F3          &kp F10         &trans
+                                                            &trans          &trans          &trans                          &trans          &mo 3           &trans                                                
             >;
         };
 
-        Syms {
-            display-name = "Syms";
-            label = "Syms";
+        NumSym {
+            display-name = "Num/Sym";
+            label = "NumSym";
             bindings = <
                             &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                      &kp CARET       &kp AMPS        &kp ASTRK       &kp MINUS        &kp EQUAL  
             &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &kp BSLH
-            &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &trans
-                                                            &trans          &trans          &trans                         &trans          &trans          &trans
+            &trans          &kp LBKT        &kp RBKT        &kp LBRC        &kp RBRC        &trans                         &trans          &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &trans
+                                                            &trans          &mo 3           &trans                         &trans          &trans          &trans
             >;
         };
 
-        Func {
-            display-name = "Func";
-            label = "Func";
+        Adjust {
+            display-name = "Adjust";
+            label = "Adjust";
             bindings = <
-                            &out OUT_USB    &out OUT_BLE    &trans          &kp C_VOL_UP    &trans                         &trans          &kp F7          &kp F8          &kp F9          &kp F12  
-            &kp CAPS        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &kp C_VOL_DN    &trans                         &trans          &kp F4          &kp F5          &kp F6          &kp F11         &trans
-            &trans          &bt BT_CLR      &trans          &trans          &kp C_MUTE      &trans                         &trans          &kp F1          &kp F2          &kp F3          &kp F10         &trans
+                            &out OUT_USB    &out OUT_BLE    &out OUT_TOG    &trans          &trans                         &trans          &kp C_VOL_UP    &kp C_NEXT      &trans          &trans  
+            &kp CAPS        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                   &trans          &kp C_MUTE      &kp C_PP        &trans          &trans           &trans
+            &trans          &bt BT_CLR      &trans          &bt BT_PRV      &bt BT_NXT      &trans                         &trans          &kp C_VOL_UP    &kp C_PREV      &trans          &trans           &trans
                                                             &trans          &trans          &trans                         &trans          &trans          &trans                                                                                                                                        
             >;
         };
@@ -184,7 +155,7 @@
                             &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
             &kp LCTRL       &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
             &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
-                                                            &kp LALT        &kp TAB         &tm 6 SPACE                     &kp SPACE       &kp BSPC        &trans
+                                                            &kp LALT        &kp TAB         &lt 5 SPACE                     &kp SPACE       &kp BSPC        &trans
             >;
         };
 
