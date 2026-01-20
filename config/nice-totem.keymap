@@ -4,11 +4,17 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define Base 0
-#define NavFnc 1
-#define NumSym 2
-#define Adjust 3
-#define Game 4
-#define GamP 5
+#define Navi 1
+#define Nums 2
+#defind Func 3
+#define Adju 4
+#define Game 5
+#define GamP 6
+
+&lt {
+    flavor = "balanced";
+    quick-tap-ms = <180>;
+};
 
 / {
 
@@ -30,12 +36,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
         combo_lpar {
             timeout-ms = <50>;
             key-positions = <14 15>;
@@ -53,13 +53,6 @@
             key-positions = <26 27>;
             layers = <0>;
             bindings = <&kp SPACE>;
-        };
-
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            layers = <1>;
-            bindings = <&kp ENTER>;
         };
 
         combo_right_b {
@@ -93,12 +86,6 @@
             layers = <5>;
             bindings = <&to 0>;
         };
-
-        combo_mod_adjust {
-            timeout-ms = <50>;
-            key-positions = <35 38>;
-            bindings = <&mo 3>;
-        };
     };
 
     keymap {
@@ -111,31 +98,42 @@
                             &kp Q           &kp W           &kp E           &kp R           &kp T                           &kp Y           &kp U           &kp I           &kp O           &kp P               
             &kp GRAVE       &hm LGUI A      &hm LALT S      &hm LCTRL D     &kp F           &kp G                           &kp H           &kp J           &hm LCTRL K     &hm LALT L      &hm RGUI SEMI   &kp SQT
             &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &kp B                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp RSHIFT
-                                                            &kp TAB         &mo 2           &mo 1                           &kp SPACE       &kp BSPC        &kp DEL
-            >;
+                                                            &lt 3 ESC       &lt 1 TAB       &kp ENTER                       &kp SPACE       &lt 2 BSPC      &lt 3 DEL
+            >!
         };
 
-        NavFnc {
-            display-name = "Nav/Fnc";
-            label = "NavFnc";
+        Navi {
+            display-name = "Navi";
+            label = "Navi";
             bindings = <
-                            &kp LC(F4)      &kp HOME        &kp UP          &kp END         &kp PG_UP                       &trans          &kp F7          &kp F8          &kp F9          &kp F12    
-            &trans          &kp LA(F4)      &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN                       &trans          &kp F4          &kp F5          &kp F6          &kp F11         &trans
-            &trans          &trans          &kp F12         &kp F11         &kp F5          &kp INS                         &trans          &kp F1          &kp F2          &kp F3          &kp F10         &trans
-                                                            &trans          &trans          &trans                          &kp ENTER       &trans          &trans                                                
+                            &kp LC(F4)      &kp HOME        &kp UP          &kp END         &kp PG_UP                       &kp PG_UP       &kp HOME        &kp UP          &kp UP          &trans    
+            &trans          &kp LA(F4)      &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN                       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
+            &trans          &trans          &kp F12         &kp F11         &kp F5          &kp INS                         &kp INS         &trans          &trans          &trans          &trans          &trans
+                                                            &trans          &trans          &trans                          &trans          &mo 4           &trans                                                
             >;
         };
 
-        NumSym {
-            display-name = "Num/Sym";
-            label = "NumSym";
+        Nums {
+            display-name = "Nums";
+            label = "Nums";
             bindings = <
                             &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                      &kp CARET       &kp AMPS        &kp ASTRK       &kp MINUS        &kp EQUAL  
             &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &kp BSLH
-            &trans          &kp LBKT        &kp RBKT        &kp LBRC        &kp RBRC        &trans                         &kp ENTER       &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &trans
-                                                            &trans          &trans          &trans                         &trans          &trans          &trans
+            &trans          &kp LBKT        &kp RBKT        &kp LBRC        &kp RBRC        &trans                         &trans          &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &trans
+                                                            &trans          &mo 4           &trans                         &trans          &trans          &trans
             >;
         };
+
+        Func {
+            display-name = "Func";
+            label = "Func";
+            bindings = <
+                            &trans          &trans          &trans          &trans          &trans                         &trans          &kp F7          &kp F8          &kp F9          &kp F12  
+            &trans          &kp LGUI        &kp LALT        &kp LCTRL       &trans          &trans                         &trans          &kp F4          &kp F5          &kp F6          &kp F11         &trans
+            &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &kp F1          &kp F2          &kp F3          &kp F10         &trans
+                                                            &trans          &trans          &trans                         &trans          &trans          &trans
+            >;
+        );
 
         Adjust {
             display-name = "Adjust";
