@@ -106,7 +106,7 @@
             display-name = "Navi";
             label = "Navi";
             bindings = <
-                            &kp LC(F4)      &kp HOME        &kp UP          &kp END         &kp PG_UP                       &kp PG_UP       &kp HOME        &kp UP          &kp UP          &trans    
+                            &kp LC(F4)      &kp HOME        &kp UP          &kp END         &kp PG_UP                       &kp PG_UP       &kp HOME        &kp UP          &kp END         &trans    
             &trans          &kp LA(F4)      &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN                       &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
             &trans          &trans          &kp F12         &kp F11         &kp F5          &kp INS                         &kp INS         &trans          &trans          &trans          &trans          &trans
                                                             &trans          &trans          &trans                          &trans          &mo 4           &trans                                                
