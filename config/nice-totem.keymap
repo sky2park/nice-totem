@@ -133,7 +133,7 @@
             &trans          &trans          &trans          &trans          &trans          &trans                         &trans          &kp F1          &kp F2          &kp F3          &kp F10         &trans
                                                             &trans          &trans          &trans                         &trans          &trans          &trans
             >;
-        );
+        };
 
         Adju {
             display-name = "Adju";
