@@ -6,7 +6,7 @@
 #define Base 0
 #define Navi 1
 #define Nums 2
-#defind Func 3
+#define Func 3
 #define Adju 4
 #define Game 5
 #define GamP 6
