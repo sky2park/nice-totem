@@ -80,6 +80,13 @@
             bindings = <&to 5>;
         };
 
+        combo_to_game_layer_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <6>;
+            bindings = <&kp ESC>;
+        };
+
         combo_to_base_layer {
             timeout-ms = <50>;
             key-positions = <10 15>;
@@ -153,7 +160,7 @@
                             &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
             &kp LCTRL       &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
             &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
-                                                            &kp LALT        &lt 6 TAB       &kp SPACE                     &kp SPACE       &kp BSPC        &trans
+                                                            &kp LALT        &lt 6 TAB       &kp SPACE                       &kp SPACE       &kp BSPC        &trans
             >;
         };
 
@@ -161,7 +168,7 @@
             display-name = "GamP";
             label = "GamP";
             bindings = <   
-                            &kp GRAVE       &kp N1          &kp N2          &kp N3          &kp N4                          &trans          &trans          &kp UP          &kp MINUS       &kp EQUAL
+                            &kp GRAVE       &kp N1          &kp N2          &kp N3          &kp N4                          &trans          &kp HOME        &kp UP          &kp END         &trans
             &sk LCTRL       &trans          &kp N5          &kp N6          &kp N7          &kp N8                          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
             &sk LSHIFT      &trans          &kp N9          &kp N0          &kp MINUS       &kp EQUAL                       &trans          &trans          &trans          &kp LPAR        &kp RPAR        &trans
                                                             &trans          &trans          &trans                          &kp ENTER       &trans          &trans
