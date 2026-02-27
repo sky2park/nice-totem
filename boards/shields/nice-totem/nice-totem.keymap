@@ -83,7 +83,7 @@
         combo_to_base_layer {
             timeout-ms = <50>;
             key-positions = <10 15>;
-            layers = <5>;
+            layers = <6>;
             bindings = <&to 0>;
         };
     };
@@ -153,7 +153,7 @@
                             &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
             &kp LCTRL       &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
             &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
-                                                            &kp LALT        &kp TAB         &lt 5 SPACE                     &kp SPACE       &kp BSPC        &trans
+                                                            &kp LALT        &lt 6 TAB       &kp SPACE                     &kp SPACE       &kp BSPC        &trans
             >;
         };
 
