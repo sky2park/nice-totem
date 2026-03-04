@@ -10,6 +10,7 @@
 #define Adju 4
 #define Game 5
 #define GamP 6
+#define GamN 7
 
 &lt {
     flavor = "balanced";
@@ -160,7 +161,7 @@
                             &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
             &kp TAB         &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
             &kp LSHIFT      &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
-                                                            &kp LCTRL       &kp LALT        &lt 6 SPACE                     &lt 2 SPACE     &kp BSPC        &kp DEL
+                                                            &kp LCTRL       &kp LALT        &lt 6 SPACE                     &lt 7 SPACE     &kp BSPC        &kp DEL
             >;
         };
 
@@ -172,6 +173,17 @@
             &kp ESC         &kp N6          &kp N7          &kp N8          &kp N9          &kp N0                          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
             &kp LSHIFT      &kp GRAVE       &trans          &trans          &kp MINUS       &kp EQUAL                       &trans          &trans          &trans          &kp LPAR        &kp RPAR        &trans
                                                             &trans          &trans          &trans                          &kp ENTER       &trans          &trans
+            >;
+        };
+
+        GamN {
+            display-name = "GamN";
+            label = "GamN";
+            bindings = <
+                            &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT                      &kp CARET       &kp AMPS        &kp ASTRK       &kp MINUS        &kp EQUAL  
+            &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                         &kp N6          &kp N7          &kp N8          &kp N9           &kp N0          &kp BSLH
+            &trans          &kp LBKT        &kp RBKT        &kp LBRC        &kp RBRC        &trans                         &trans          &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT       &trans
+                                                            &trans          &trans          &kp ENTER                      &trans          &trans          &trans
             >;
         };
     };
