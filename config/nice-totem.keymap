@@ -158,9 +158,9 @@
             label = "Game";
             bindings = <
                             &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans   
-            &kp LCTRL       &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
-            &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
-                                                            &kp LALT        &lt 6 TAB       &kp SPACE                       &kp SPACE       &kp BSPC        &kp ENTER
+            &kp TAB         &kp A           &kp S           &kp D           &trans          &trans                          &trans          &trans          &kp K           &kp L           &kp SEMI        &trans
+            &kp LSHIFT      &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans
+                                                            &kp LCTRL       &kp LALT        &lt 6 SPACE                     &lt 2 SPACE     &kp BSPC        &kp DEL
             >;
         };
 
@@ -169,9 +169,9 @@
             label = "GamP";
             bindings = <   
                             &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                          &trans          &kp HOME        &kp UP          &kp END         &trans
-            &sk LCTRL       &kp N6          &kp N7          &kp N8          &kp N9          &kp N0                          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
-            &sk LSHIFT      &kp GRAVE       &trans          &trans          &kp MINUS       &kp EQUAL                       &trans          &trans          &trans          &kp LPAR        &kp RPAR        &trans
-                                                            &trans          &trans          &trans                          &trans          &trans          &trans
+            &kp ESC         &kp N6          &kp N7          &kp N8          &kp N9          &kp N0                          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &trans          &trans
+            &kp LSHIFT      &kp GRAVE       &trans          &trans          &kp MINUS       &kp EQUAL                       &trans          &trans          &trans          &kp LPAR        &kp RPAR        &trans
+                                                            &trans          &trans          &trans                          &kp ENTER       &trans          &trans
             >;
         };
     };
